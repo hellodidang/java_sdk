@@ -298,16 +298,6 @@ if(response.getInt("errorcode")==0){
 	- `card_type` 0 代表输入图像是身份证正面， 1代表输入是身份证反面
 
 
-###### 名片ocr识别
-- 接口
-`JSONObject NameCardOcr(String image_path,boolean retimage)`
-`JSONObject NameCardOcr(String url,boolean retimage)`
-- 参数
-	- `image_path` 待检测图片路径
-	- `url` 待检测图片的url
-	- `retimage` false代表不需要返回识别后图像， true代表需要返回识别后图像
-
-
 ###### 通用OCR
 - 接口
 `JSONObject GeneralOcr(String image_path)`
