@@ -665,29 +665,6 @@ public class Youtu {
 		return respose;
 	}
 
-	public JSONObject NameCardOcr(String image_path,boolean retimage) throws IOException,
-	JSONException, KeyManagementException, NoSuchAlgorithmException {
-
-		StringBuffer image_data = new StringBuffer("");
-		JSONObject data = new JSONObject();
-
-		GetBase64FromFile(image_path, image_data);
-		data.put("image", image_data.toString());
-		data.put("retimage", retimage);
-		JSONObject respose =m_not_use_https?SendHttpRequest(data, "ocrapi/namecardocr"):SendHttpsRequest(data, "ocrapi/namecardocr");
-		return respose;
-	}
-
-	public JSONObject NameCardOcrUrl(String url,boolean retimage) throws IOException,
-	JSONException, KeyManagementException, NoSuchAlgorithmException {
-		JSONObject data = new JSONObject();
-		data.put("url", url);
-		data.put("retimage", retimage);
-		JSONObject respose =m_not_use_https?SendHttpRequest(data, "ocrapi/namecardocr"):SendHttpsRequest(data, "ocrapi/namecardocr");
-		return respose;
-	}
-
-
 
 	public JSONObject LiveGetFour() throws IOException,
 	JSONException, KeyManagementException, NoSuchAlgorithmException {
