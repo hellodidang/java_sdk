@@ -57,7 +57,7 @@ public class Youtu {
 
 	public final static  String API_YOUTU_END_POINT = "https://api.youtu.qq.com/youtu/";
 	public final static  String API_YOUTU_CHARGE_END_POINT = "https://vip-api.youtu.qq.com/youtu/";
-	public final static String API_TENCENTYUN_END_POINT = "https://youtu.api.qcloud.com/youtu/";
+
 	// 30 days
 	private static int EXPIRED_SECONDS = 2592000;
 	private String m_appid;
