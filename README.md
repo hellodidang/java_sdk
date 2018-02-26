@@ -185,7 +185,7 @@ if(response.getInt("errorcode")==0){
 	- `url` 待检测的图片url
 	- `image_path` 待识别的图片数据路径
 
-###多人脸检索
+###### 多人脸检索
 - 接口
     `JSONObject MultiFaceIdentify(String image_path, String group_id, List<String> group_ids)`
     `JSONObject MultiFaceIdentifyUrl(String url, String group_id, List<String> group_ids)`
