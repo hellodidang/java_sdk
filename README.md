@@ -1,6 +1,6 @@
 # tencentyun-youtu-java
 
-java sdk for [腾讯云智能优图服务](http://www.qcloud.com/product/fr.html) & [腾讯优图开放平台](http://open.youtu.qq.com)
+java sdk for [腾讯优图开放平台](http://open.youtu.qq.com)
 
 ## 名词
 
@@ -12,7 +12,7 @@ java sdk for [腾讯云智能优图服务](http://www.qcloud.com/product/fr.html
 ## 使用方法
 
 1. 下载sdk到您的目录
-	git clone https://github.com/TencentYouTu/java_sdk.git
+	git clone https://github.com/Tencent-YouTu/java_sdk.git
 2. 在你的项目里引入本项目dist目录下的json.jar和youtu-java-sdk.jar包或者直接引入源码
 3. 导入包并创建Youtu对象，然后调用相应方法
 
@@ -185,6 +185,18 @@ if(response.getInt("errorcode")==0){
 	- `url` 待检测的图片url
 	- `image_path` 待识别的图片数据路径
 
+###多人脸检索
+- 接口
+    `JSONObject MultiFaceIdentify(String image_path, String group_id, List<String> group_ids)`
+    `JSONObject MultiFaceIdentifyUrl(String url, String group_id, List<String> group_ids)`
+    `JSONObject MultiFaceIdentify(String image_path, String group_id, List<String> group_ids, int topn, int min_size)`
+    `JSONObject MultiFaceIdentifyUrl(String url, String group_id, List<String> group_ids, int topn, int min_size)`
+- 参数
+	- `group_id` 识别的组id
+	- `group_ids` 识别的个体存放的组id，可以指定多个组id，用户指定
+	- `topn` 候选人脸数量，一般使用默认值5
+	- `min_size` 人脸检测最小尺寸，一般使用默认值40
+
 ###### 新建个体
 - 接口
     `JSONObject NewPerson(String image_path, String person_id, List<String> group_ids)`
@@ -287,6 +299,21 @@ if(response.getInt("errorcode")==0){
 	- `image_path` 待识别的图片数据路径
 	- `url` 待检测的图片url
 
+###### 暴恐图片识别
+- 接口
+`JSONObject ImageTerrorism(String image_path)`
+`JSONObject ImageTerrorismUrl(String url)`
+- 参数
+	- `image_path` 待识别的图片数据路径
+	- `url` 待检测的图片url
+
+###### 车辆属性识别
+- 接口
+`JSONObject CarClassify(String image_path)`
+`JSONObject CarClassifyUrl(String url)`
+- 参数
+	- `image_path` 待识别的图片数据路径
+	- `url` 待检测的图片url
 
 ###### 身份证OCR
 - 接口
@@ -325,6 +352,29 @@ if(response.getInt("errorcode")==0){
 	- `url` 待检测图片的url
 	- `card_type` 0 代表输入图像是行驶证， 1代表输入图像是驾驶证
 
+###### 银行卡OCR识别
+- 接口
+`JSONObject CreditCardOcr(String image_path)`
+`JSONObject CreditCardOcrUrl(String url)`
+- 参数
+	- `image_path` 待检测图片路径
+	- `url` 待检测图片的url
+
+###### 营业执照OCR识别
+- 接口
+`JSONObject BizLicenseOcr(String image_path)`
+`JSONObject BizLicenseOcrUrl(String url)`
+- 参数
+	- `image_path` 待检测图片路径
+	- `url` 待检测图片的url
+	
+###### 车牌OCR识别
+- 接口
+`JSONObject PlateOcr(String image_path)`
+`JSONObject PlateOcrUrl(String url)`
+- 参数
+	- `image_path` 待检测图片路径
+	- `url` 待检测图片的url
 
 ***
 ####更多详情和文档说明参见
