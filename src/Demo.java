@@ -8,10 +8,10 @@ public class Demo {
 
 	// appid, secretid secretkey请到http://open.youtu.qq.com/获取
 	// 请正确填写把下面的APP_ID、SECRET_ID和SECRET_KEY
-	public static final String APP_ID = "10105350";
-	public static final String SECRET_ID = "AKIDdA0iGoRUjx0ru6R5rSH2c1KpNm0WuWyG";
-	public static final String SECRET_KEY = "FTWQONCtSWZXN2axAufGhx228JYfeS41";
-	public static final String USER_ID = "993801914";
+	public static final String APP_ID = "xxx";
+	public static final String SECRET_ID = "xxx";
+	public static final String SECRET_KEY = "xxx";
+	public static final String USER_ID = "xxx"; //qq号
 
 	public static void main(String[] args) {
 
