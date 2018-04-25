@@ -5,6 +5,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -1001,6 +1003,36 @@ public class Youtu {
 		data.put("url", image_url);
 
 		JSONObject response = m_not_use_https ? SendHttpRequest(data, "ocrapi/plateocr") : SendHttpsRequest(data, "ocrapi/plateocr");
+
+		return response;
+	}
+
+	public JSONObject FaceMerge(String image_path,String model_id) throws IOException,
+			JSONException, KeyManagementException, NoSuchAlgorithmException {
+		JSONObject data = new JSONObject();
+
+		StringBuffer image_data = new StringBuffer("");
+		GetBase64FromFile(image_path, image_data);
+
+		data.put("img_data", image_data);
+		data.put("rsp_img_type", "url");
+
+		JSONArray opdataJsonArray = new JSONArray();
+		JSONObject opdataJsonObject = new JSONObject();
+		opdataJsonObject.put("cmd","doFaceMerge");
+
+		JSONObject modelIdJsonObject = new JSONObject();
+		modelIdJsonObject.put("model_id",model_id);
+
+		opdataJsonObject.put("params",modelIdJsonObject);
+		opdataJsonArray.put(opdataJsonObject);
+
+		data.put("opdata",opdataJsonArray);
+
+		System.out.println(data);
+
+
+		JSONObject response = m_not_use_https ? SendHttpRequest(data, "cgi-bin/pitu_open_access_for_youtu.fcg") : SendHttpsRequest(data, "ocrapi/creditcardocr");
 
 		return response;
 	}
